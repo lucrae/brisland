@@ -1,2 +1,2 @@
 # brisland
-A simple, anonymous social network
+An account-less, anonymous social platform
