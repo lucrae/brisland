@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BRISLAND - Admin</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="hr-header">
+        USERS
+    </div>
+    <table>
+        {% for user in users %}
+        <tr>
+            <td>
+                {{ user }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <div class="hr-header">
+        POSTS
+    </div>
+    <table>
+        {% for post in posts %}
+            <tr>
+                <td>
+                    {{ post }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

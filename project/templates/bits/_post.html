@@ -1,0 +1,14 @@
+<div class="post">
+    <div class='post-header'>
+        <span>
+            <span class="user-tag"><i class="fa fa-user"></i>{{ post.author.tag }}</span>
+            <span class="post-tag"><i class="fa fa-archive"></i>{{ post.tag }}</span>
+        </span>
+        <span style="float: right; color: var(--base1)">
+            {{ post.relative_timestamp }}
+        </span>
+    </div>
+    <div class="post-body">
+        {{ post.body }}
+    </div>
+</div>

@@ -1,0 +1,10 @@
+pip-selfcheck.json
+
+*.pyc
+*.pyo
+*.ipynb_checkpoints
+.installed.cfg
+
+.vscode/
+bin/
+side/

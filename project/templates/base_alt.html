@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BRISLAND</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" 
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+	</head>
+	<body>
+        <div class="center-alt down-alt" id="title">
+            <i class="fa fa-crow"></i>BRISLAND
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: var(--base02);
+    color: var(--base1);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.hr-header {
+    background-color: var(--base1);
+    color: var(--base03);
+}

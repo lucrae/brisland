@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BRISLAND</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" 
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+	</head>
+	<body>
+        <div class='navbar'>
+            <div class='center'>
+                <a href="{{ url_for('main.home') }}">
+                    <div class='navbar-box' id='title'>
+                        <i class="fa fa-crow"></i>BRISLAND
+                    </div>
+                </a>
+
+<!--            <a href="#">
+                    <div class='navbar-box btn' style='float: right;'>
+                        <i class="fa fa-plus-square" style='color: var(--cyan);'></i>POST
+                    </div>
+                </a> -->
+                <a href="#">
+                    <div class='navbar-box' style='float: right;'>
+                        <span class="user-tag"><i class="fa fa-user"></i>{{ current_user.tag }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

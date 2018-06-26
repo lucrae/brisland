@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}
+
+<div class="center down">
+    {% for post in posts %}
+        {% include "bits/_post.html" %}
+    {% endfor %}
+</div>
+
+{% endblock %}
