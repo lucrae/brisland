@@ -37,14 +37,17 @@ class Post(db.Model):
     body = db.Column(db.String(256))
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    board_id = db.Column(db.Integer, db.ForeignKey('board.id'), default=1)
     author = db.relationship('User', backref=db.backref('posts', lazy='dynamic'))
+    board = db.relationship('Board', backref=db.backref('posts', lazy='dynamic'))
 
-    def __init__(self, body, user_id):
+    def __init__(self, body, user_id, board_id=1):
         self.body = body
         self.user_id = user_id
+        self.board_id = board_id
 
     def __repr__(self):
-        return '<Post({}, {}, {})>'.format(self.id, self.tag, self.timestamp)
+        return '<Post({}, {}, {}, {})>'.format(self.id, self.tag, self.user_id, self.board_id)
 
     @property
     def relative_timestamp(self):
@@ -59,3 +62,15 @@ class Post(db.Model):
         elif s < 3600: return '{} minutes ago'.format(s//60)
         elif s < 7200: return '1 hour ago'
         else: return '{} hours ago'.format(s//3600)
+
+class Board(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    suffix = db.Column(db.String(8))
+    icon = db.Column(db.String(16), default='globe')
+
+    def __init__(self, suffix, icon):
+        self.suffix = suffix
+        self.icon = icon
+
+    def __repr__(self):
+        return '<Board({}, {})>'.format(self.id, self.suffix)

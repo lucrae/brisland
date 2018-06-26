@@ -17,16 +17,17 @@
         <div class='navbar'>
             <div class='center'>
                 <a href="{{ url_for('main.home') }}">
-                    <div class='navbar-box' id='title'>
-                        <i class="fa fa-crow"></i>BRISLAND
+                    <div class='navbar-box'>
+                        <span id='title'>
+                            <i class="fa fa-crow"></i>BRISLAND
+                        </span>
+                        <span id='board-suffix'>
+                            {% if board_suffix %}
+                                /b/{{ board_suffix }}
+                            {% endif %}
+                        </span>
                     </div>
                 </a>
-
-<!--            <a href="#">
-                    <div class='navbar-box btn' style='float: right;'>
-                        <i class="fa fa-plus-square" style='color: var(--cyan);'></i>POST
-                    </div>
-                </a> -->
                 <a href="#">
                     <div class='navbar-box' style='float: right;'>
                         <span class="user-tag"><i class="fa fa-user"></i>{{ current_user.tag }}</span>

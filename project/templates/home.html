@@ -1,6 +1,36 @@
 {% extends "base.html" %}{% block content %}
 
 <div class="center down">
+    Your allocated <b>user tag</b> is
+    <span class="user-tag"><i class="fa fa-user"></i>{{ current_user.tag }}</span>
+</div>
+
+<br>
+
+<div class="center" style="line-height: 180%;">
+    Boards:
+    {% for b in boards %}
+        <a href="{{ url_for('main.board', board_suffix=b.suffix) }}" class="cold-link" style="white-space: nowrap;">
+            {% if b == board %}
+                <span class="board-tag"><i class="fa fa-{{ b.icon }}"></i>{{ b.suffix }}</span>
+            {% else %}
+                <span class="board-tag-unfocus"><i class="fa fa-{{ b.icon }}"></i>{{ b.suffix }}</span>
+            {% endif %}
+        </a>
+    {% endfor %}
+</div>
+
+<br>
+
+<div class="center">
+    <div class="post">
+        Post in <span class="board-tag"><i class="fa fa-{{ board.icon }}"></i>{{ board.suffix }}</span>:
+    </div>
+</div>
+
+<br>
+
+<div class="center">
     {% for post in posts %}
         {% include "bits/_post.html" %}
     {% endfor %}
